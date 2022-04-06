@@ -1,23 +1,18 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Search } from '../search'
-import { searchGiphys } from '../api/giphy'
 import './app.css'
 
 function App() {
   const [gifs, setGifs] = useState([])
 
-  useEffect(() => {
-    searchGiphys('cat').then(res => {
-      setGifs(res.data)
-    })
-  }, [])
-  
-  console.log(gifs)
-  
+  console.log("pinta gifs en app");
+  console.log(gifs);
+  console.log("termina de pintar gifs en app");
+
   return (
     <div className="App">
       <header className="App-header">
-        <Search />
+        <Search setGifs={setGifs}/>
       </header>
     </div>
   )
