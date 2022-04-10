@@ -1,0 +1,21 @@
+.SearchedGifs {
+  padding: 2em 0 2em 0;
+}
+
+.SearchedGifs__title {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.SearchedGrid {
+  columns: 4 120px;
+  column-gap: 1.5em;
+}
+
+.SearchedGrid img {
+  width: 100%;
+  margin-bottom: 1.5em;
+} 

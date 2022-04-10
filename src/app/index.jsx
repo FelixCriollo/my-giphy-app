@@ -1,19 +1,36 @@
 import { useState } from 'react'
-import { Search } from '../search'
+import { Header } from '../components/header'
+import { Search } from '../components/search'
+import { SearchedGifs } from '../components/searchedGifs'
+import { GifContainer } from '../components/gif/gifList'
+import { TrendingGifs } from '../components/trendingGifs'
 import './app.css'
 
 function App() {
   const [gifs, setGifs] = useState([])
+  const [currentSearch, setCurrentSearch] = useState("")
 
-  console.log("pinta gifs en app");
+  console.log("desde index");
+  console.log(currentSearch);
   console.log(gifs);
-  console.log("termina de pintar gifs en app");
-
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <Search setGifs={setGifs}/>
-      </header>
+      <Header>
+        <Search setGifs={setGifs} setCurrentSearch={setCurrentSearch}/>
+      </Header>
+
+      <TrendingGifs />
+
+      {
+        gifs.length !== 0
+          ? (
+            <SearchedGifs search={currentSearch}>
+              <GifContainer gifs={gifs}/>
+            </SearchedGifs>
+          )
+          : null
+      }
     </div>
   )
 }
