@@ -1,4 +1,5 @@
 import { GifCard } from "../gifCard";
+import "./gifList.css"
 
 export function GifContainer({ gifs, list = false }) {
   return (
@@ -7,7 +8,7 @@ export function GifContainer({ gifs, list = false }) {
         gifs.map(gif => (
           list
             ? 
-              <li key={gif.id}>
+              <li key={gif.id} className="Gif__item">
                 <GifCard props={gif}/>
               </li>
             

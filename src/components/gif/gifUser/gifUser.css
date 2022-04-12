@@ -1,0 +1,45 @@
+.GifUser__bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #00000088;
+  left: 0;
+  bottom: 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.GifUser__bg--none {
+  display: none;
+}
+
+.GifUser {
+  position: absolute;
+  bottom: 0;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: .5em;
+}
+
+
+.GifUser__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 1000px;
+}
+
+.GifUser__info {
+  color: #fff;
+}
+
+.GifUser__name {
+  font-weight: bold;
+}
+
+.noUser {
+  text-align: center;
+  color: #fff;
+  font-weight: 700;
+}

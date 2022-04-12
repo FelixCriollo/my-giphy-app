@@ -1,8 +1,11 @@
-.gif {
+.Gif {
+  position: relative;
   height: 100%;
   width: 100%;
 }
-.gif__img {
+.Gif__img {
   height: 100%;
+  /* width: 100%; */
   border-radius: 10px;
+  z-index: -1;
 }
