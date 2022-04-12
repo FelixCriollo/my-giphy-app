@@ -18,10 +18,10 @@ export function TrendingGifs() {
   return (
     <section className="TrendingGifs">
       <div className="container">
-        <h2 class='TrendingGifs__title'>Popular Gifs</h2>
+        <h2 className='TrendingGifs__title'>Popular Gifs</h2>
 
         <Carousel>
-          <GifContainer gifs={trending ? trending : []} fixed_size="height"/>
+          <GifContainer gifs={trending ? trending : []}/>
         </Carousel>
       </div>
     </section>

@@ -12,7 +12,7 @@
   margin: auto;
   display: flex;
   gap: 1em;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .Carousel__control {

@@ -1,14 +1,18 @@
-export function GifContainer({ gifs, fixed_size = "width" }) {
+import { GifCard } from "../gifCard";
+
+export function GifContainer({ gifs, list = false }) {
   return (
     <>
       { 
         gifs.map(gif => (
-            <img 
-              src={fixed_size === "width" ? gif.images.fixed_width.url : gif.images.fixed_height.url}
-              alt="sspap" 
-              key={gif.id} 
-            />
-        ))
+          list
+            ? 
+              <li key={gif.id}>
+                <GifCard props={gif}/>
+              </li>
+            
+            : <GifCard props={gif} key={gif.id}/>
+          ))
       }     
     </>
   )

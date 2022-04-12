@@ -26,7 +26,7 @@ function App() {
         gifs.length !== 0
           ? (
             <SearchedGifs search={currentSearch}>
-              <GifContainer gifs={gifs}/>
+              <GifContainer gifs={gifs} list={true}/>
             </SearchedGifs>
           )
           : null

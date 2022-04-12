@@ -4,11 +4,11 @@ export function SearchedGifs({ search, children }) {
   return (
     <section className="SearchedGifs">
       <div className="container">
-        <h2 class='SearchedGifs__title'>{search}</h2>
+        <h2 className='SearchedGifs__title'>{search}</h2>
 
-        <div className="SearchedGrid">
+        <ul className="SearchedGrid">
           {children}
-        </div>
+        </ul>
       </div>
     </section>
   )

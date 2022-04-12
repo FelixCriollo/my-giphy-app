@@ -5,15 +5,11 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   font: inherit;
   vertical-align: baseline;
 }
-/* 
-* {
-  margin: 0px;
-  padding: 0px;
-  border: 0px;
-  font: inherit;
-  vertical-align: baseline;
-} */
 
 ul {
+  list-style: none;
+}
+
+li {
   list-style: none;
 }
