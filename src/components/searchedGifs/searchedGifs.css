@@ -2,6 +2,12 @@
   padding: 2em 0 2em 0;
 }
 
+.SearchedGifs .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .SearchedGifs__title {
   text-align: center;
   text-transform: uppercase;
@@ -13,4 +19,15 @@
 .SearchedGrid {
   columns: 4 120px;
   column-gap: 1.5em;
+}
+
+.More__gifs {
+  padding: 0.5em 1em;
+  margin-top: 2em;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: 700;
+  background-color: #1b1b1b;
+  cursor: pointer;
+  align-self: center;
 }

@@ -1,12 +1,7 @@
 import './gifUser.css'
 
 export function GifUser({ user, visible }) {
-  console.log(visible);
-  let emptyUser = false
-  
-  if (user === undefined) {
-    emptyUser = true
-  }
+  let emptyUser = user === undefined ? true : false
 
   return (
     <div className={`GifUser__bg${!visible ? " GifUser__bg--none" : ""}`}>

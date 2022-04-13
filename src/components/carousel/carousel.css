@@ -1,4 +1,5 @@
 .Carousel {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -7,7 +8,6 @@
   border-radius: .5em;
 }
 .Carousel__item {
-  width: 90%;
   height: 8em;
   margin: auto;
   display: flex;
@@ -16,8 +16,29 @@
 }
 
 .Carousel__control {
-  background: #000;
+  position: absolute;
+  height: 80%;
+  width: 4em;
   padding: .5em .5em .25em .5em;
-  border-radius: 10px;
   cursor: pointer;
+}
+
+.Carousel__control--left {
+  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.1) 100%);
+  backdrop-filter: blur(4px);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  z-index: 1;
+}
+
+.Carousel__control--right {
+  background: linear-gradient(270deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.1) 100%);
+  backdrop-filter: blur(4px);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  right: 0;
+}
+
+.Carousel__control--none {
+  display: none;
 }

@@ -3,7 +3,7 @@ import './carousel.css'
 
 export function Carousel({ children }) {
   const move = (direction = 'rigth' ) => {
-    const container = document.querySelector(".Carousel__item") 
+    const container = document.querySelector(".Carousel__item")
     if (direction === 'rigth') {
       container.scrollLeft += (container.clientWidth / 1.5)
     } else {
@@ -14,7 +14,7 @@ export function Carousel({ children }) {
   return (
     <div className="Carousel">
       <button type='button' 
-        className='Carousel__control'
+        className='Carousel__control Carousel__control--left'
         onClick={() => move('left')}
         aria-label='carousel left control'>
 
@@ -26,7 +26,7 @@ export function Carousel({ children }) {
       </div>
       
       <button type='button' 
-        className='Carousel__control'
+        className='Carousel__control Carousel__control--right'
         onClick={() => move()}
         aria-label='carousel right control'>
         <AiOutlineArrowRight  size={28} color="#fff"/>

@@ -9,6 +9,13 @@ export function SearchedGifs({ search, children }) {
         <ul className="SearchedGrid">
           {children}
         </ul>
+
+        <button 
+          className='More__gifs'
+          type='button' aria-aria-label='Load more Gifs'
+          >
+          Load more Gifs
+        </button>
       </div>
     </section>
   )
