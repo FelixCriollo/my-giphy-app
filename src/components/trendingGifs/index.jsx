@@ -1,14 +1,15 @@
 import { GifContainer } from "../gif/gifList";
 import { fetchTrendingGifs } from "../../api/gifs";
-import { useState, useEffect } from "react";
+import { useState, useEffect, memo } from "react";
 import { Carousel } from "../carousel";
 import './trendingGifs.css';
 
-export function TrendingGifs() {
-  const [trending, setTrending] = useState('')
+function TrendingGifs() {
+  const [trending, setTrending] = useState([])
 
   useEffect(() => {
     const fetchTrends = async () => {
+      console.log("una vez");
       const res = await fetchTrendingGifs()
       setTrending(res.data)
     }
@@ -27,3 +28,5 @@ export function TrendingGifs() {
     </section>
   )
 } 
+
+export default memo(TrendingGifs)

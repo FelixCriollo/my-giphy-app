@@ -1,21 +1,35 @@
+import { GifContainer } from '../gif/gifList';
+import useGiphy from '../../hooks/useGiphy'
 import './searchedGifs.css'
 
-export function SearchedGifs({ search, children }) {
+export function SearchedGifs() {
+  const { gifs, currentSearch } = useGiphy()
+
   return (
     <section className="SearchedGifs">
       <div className="container">
-        <h2 className='SearchedGifs__title'>{search}</h2>
+        {
+          gifs.length !== 0
+            ? 
+              (
+                <>
+                  <h2 className='SearchedGifs__title'>{currentSearch}</h2>
 
-        <ul className="SearchedGrid">
-          {children}
-        </ul>
+                  <ul className="SearchedGrid">
+                    <GifContainer gifs={gifs} list={true}/>
+                  </ul>
 
-        <button 
-          className='More__gifs'
-          type='button' aria-aria-label='Load more Gifs'
-          >
-          Load more Gifs
-        </button>
+                  <button 
+                    className='More__gifs'
+                    type='button' aria-label='Load more Gifs'
+                    >
+                    Load more Gifs
+                  </button>
+                </>
+              )
+            : <p>Instroduce gifs</p>
+        }
+        
       </div>
     </section>
   )

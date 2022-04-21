@@ -1,30 +1,30 @@
 import { BiSearchAlt2 } from 'react-icons/bi'
-import { useState } from 'react'
+import { useState, useCallback, memo } from 'react'
 import { fetchGifs } from '../../api/gifs'
 import './search.css'
+import useGiphy from '../../hooks/useGiphy'
 
-export function Search({ setGifs, setCurrentSearch }) {
-  const [search, setSearch] = useState('')
+function Search() {
+  const { setGifs, setCurrentSearch } = useGiphy();
   
-  // Si hay un cambio en el input del form, pone ese valor en search
+  const [search, setSearch] = useState("")
+  
   const handleChange = (e) => {
     console.log(e.target.value);
     setSearch(e.target.value)
   }
-
-  // Maneja el submit. Si search no esta blanco hace una consulta de gifs
-  // con el valor que se encuentra en search y actualiza la lista de gifs 
-  // de la app 
-  const handleSubmit = async (e) => {
-    const isBlank = e.target.inputSearch.value 
+ 
+  const handleSubmit = useCallback(async (e) => {
+    console.log("algo");
+    const lower = search.toLocaleLowerCase()
     e.preventDefault() 
     
-    if (isBlank !== "") {
-      const gifs = await fetchGifs(search)
+    if (lower !== "") {
+      const gifs = await fetchGifs(lower)
       setGifs(gifs.data)
-      setCurrentSearch(search)
+      setCurrentSearch(lower)
     }
-  }
+  }, [search])
 
   return (
     <form onSubmit={handleSubmit} className='Search'>
@@ -42,3 +42,5 @@ export function Search({ setGifs, setCurrentSearch }) {
     </form>
   )
 }
+
+export default memo(Search)
