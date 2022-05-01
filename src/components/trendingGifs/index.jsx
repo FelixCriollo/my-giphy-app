@@ -6,6 +6,7 @@ import './trendingGifs.css';
 
 function TrendingGifs() {
   const [trending, setTrending] = useState([])
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const fetchTrends = async () => {
@@ -14,6 +15,7 @@ function TrendingGifs() {
       setTrending(res.data)
     }
     fetchTrends()
+    setLoading(false)
   }, [])
 
   return (
@@ -22,7 +24,7 @@ function TrendingGifs() {
         <h2 className='TrendingGifs__title'>Popular Gifs</h2>
 
         <Carousel>
-          <GifContainer gifs={trending ? trending : []}/>
+          <GifContainer gifs={trending ? trending : []} loading={loading}/>
         </Carousel>
       </div>
     </section>

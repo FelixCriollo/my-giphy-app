@@ -1,34 +1,34 @@
 import { BiSearchAlt2 } from 'react-icons/bi'
 import { useState, useCallback, memo } from 'react'
-import { fetchGifs } from '../../api/gifs'
-import './search.css'
 import useGiphy from '../../hooks/useGiphy'
+import './search.css'
 
 function Search() {
-  const { setGifs, setCurrentSearch } = useGiphy();
-  
-  const [search, setSearch] = useState("")
+  const { setCurrentSearch, actulizeData, setLimit, setLoading  } = useGiphy();
+  const [ search, setSearch ] = useState("")
   
   const handleChange = (e) => {
     console.log(e.target.value);
     setSearch(e.target.value)
   }
- 
-  const handleSubmit = useCallback(async (e) => {
-    console.log("algo");
-    const lower = search.toLocaleLowerCase()
+  
+  const handleSubmit = useCallback((e) => {
     e.preventDefault() 
+    setLoading(true)
+    const lower = search.toLocaleLowerCase()
     
     if (lower !== "") {
-      const gifs = await fetchGifs(lower)
-      setGifs(gifs.data)
+      setLimit(30)
       setCurrentSearch(lower)
+      actulizeData(lower) 
     }
   }, [search])
 
   return (
     <form onSubmit={handleSubmit} className='Search'>
-      <button type="submit" className='Search__submit' aria-label='search button' tabIndex={0}>
+      <button type="submit" className='Search__submit' 
+        aria-label='search button' tabIndex={0}
+      >
         <BiSearchAlt2 />
       </button>
           

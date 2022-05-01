@@ -6,9 +6,9 @@ const api = axios.create({
 })
 
 // Busca gifs segun una consulta
-export async function fetchGifs(query) {
+export async function fetchGifs(query, limit = 20) {
   try {
-    const response = await api.get(`/search?api_key=${GIPHY_KEY}&q=${query}&limit=20&offset=0&rating=g&lang=en`)    
+    const response = await api.get(`/search?api_key=${GIPHY_KEY}&q=${query}&limit=${limit}&offset=0&rating=g&lang=en`)    
     return response.data
   } catch (error) {
     console.log(error.response.data);
