@@ -2,8 +2,7 @@ import { GifCard } from "../gifCard";
 import "./gifList.css"
 
 export function GifContainer({ gifs, loading, list = false }) {
-  // console.log(gifs);
-  // console.log(loading);
+  // console.log(list);
   const gifsSkeleton = () => {
     let arr = []
     for (let i = 0; i < 10; i++) {
@@ -28,10 +27,10 @@ export function GifContainer({ gifs, loading, list = false }) {
             list
               ? 
                 <li key={gif.id} className="Gif__item">
-                  <GifCard props={gif}/>
+                  <GifCard props={gif} list={list}/>
                 </li>
               
-              : <GifCard props={gif} key={gif.id} />
+              : <GifCard props={gif} key={gif.id} list={list}/>
           ))
       }     
     </>

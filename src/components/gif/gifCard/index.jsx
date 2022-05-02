@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { GifUser } from '../gifUser';
 import './gifCard.css'
 
-export function GifCard({ props }) {
+export function GifCard({ props, list = false }) {
   const [userVisible, setUserVisible] = useState(false)
 
   const handleMouseOver = () => setUserVisible(true)
@@ -25,7 +25,7 @@ export function GifCard({ props }) {
           key={id}
        />
 
-       <GifUser user={user} visible={userVisible}/>
+       <GifUser user={user} visible={userVisible} list={list}/>
     </div>
   )
 }

@@ -1,26 +1,33 @@
 .Carousel {
   position: relative;
+  height: 10em;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: #fff;
   padding: 1em .5em;
   border-radius: .5em;
+  overflow: hidden;
 }
 .Carousel__item {
+  /* position: absolute; */
   height: 8em;
   margin: auto;
   display: flex;
   gap: 1em;
-  overflow: hidden;
+  transition: all .5s ease-out;
+  /* overflow: hidden; */
 }
 
 .Carousel__control {
   position: absolute;
-  height: 80%;
+  height: 8em;
   width: 4em;
   padding: .5em .5em .25em .5em;
   cursor: pointer;
+}
+.Carousel__control--none {
+  display: none;
 }
 
 .Carousel__control--left {
@@ -28,6 +35,7 @@
   backdrop-filter: blur(4px);
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+  left: 0;
   z-index: 1;
 }
 
