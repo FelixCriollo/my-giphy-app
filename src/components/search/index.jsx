@@ -4,7 +4,7 @@ import useGiphy from '../../hooks/useGiphy'
 import './search.css'
 
 function Search() {
-  const { setCurrentSearch, actulizeData, setLimit, setLoading  } = useGiphy();
+  const { setCurrentSearch, actulizeData, setLoading  } = useGiphy();
   const [ search, setSearch ] = useState("")
   
   const handleChange = (e) => {
@@ -18,7 +18,6 @@ function Search() {
     const lower = search.toLocaleLowerCase()
     
     if (lower !== "") {
-      setLimit(30)
       setCurrentSearch(lower)
       actulizeData(lower) 
     }

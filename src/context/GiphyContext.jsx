@@ -6,12 +6,10 @@ export const GiphyContext = createContext()
 export function GiphyContextProvider({children}) {
   const [ gifs, setGifs ] = useState([])
   const [ currentSearch, setCurrentSearch ] = useState("")
-  const [ limit, setLimit ] = useState(30)
   const [ loading, setLoading ] = useState(true)
 
-  console.log(loading);
-  const actulizeData = async (search, number = 20) => {
-    const data = await fetchGifs(search, number)
+  const actulizeData = async (search) => {
+    const data = await fetchGifs(search, 50)
     setGifs(data.data)
     setLoading(false)
     console.log(loading);
@@ -23,8 +21,6 @@ export function GiphyContextProvider({children}) {
       setGifs,
       currentSearch,
       setCurrentSearch,
-      limit,
-      setLimit,
       loading, 
       setLoading,
       actulizeData

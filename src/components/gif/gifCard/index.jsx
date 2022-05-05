@@ -16,11 +16,12 @@ export function GifCard({ props, list = false }) {
     user
   } = props
 
+
   return (
     <div className="Gif" onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave}>
       <img 
           className="Gif__img"
-          src={images.fixed_width.url}
+          src={images.fixed_width.webp}
           alt={title} 
           key={id}
        />

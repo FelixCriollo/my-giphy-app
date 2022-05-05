@@ -1,5 +1,5 @@
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
-import { useState, useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import './carousel.css'
 
 export function Carousel({ children }) {

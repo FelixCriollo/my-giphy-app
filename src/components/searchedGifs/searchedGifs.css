@@ -1,5 +1,6 @@
 .SearchedGifs {
   padding: 2em 0 2em 0;
+  margin-block: auto;
 }
 
 .SearchedGifs .container {
@@ -17,11 +18,12 @@
 }
 
 .SearchedGrid {
-  /* columns: 4 180px;
-  column-gap: 1.5em; */
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1.5em;
+  columns: 4 180px;
+  column-gap: 1.5em;
+}
+
+.SearchedGrid > li {
+  margin-bottom: 1.5em;
 }
 
 .More__gifs {
@@ -33,5 +35,9 @@
   background-color: #1b1b1b;
   cursor: pointer;
   align-self: center;
+}
+
+.BuscarGifs {
+  text-align: center;
 }
 

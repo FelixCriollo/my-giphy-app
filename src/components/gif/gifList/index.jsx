@@ -2,8 +2,9 @@ import { GifCard } from "../gifCard";
 import "./gifList.css"
 
 export function GifContainer({ gifs, loading, list = false }) {
-  // console.log(list);
+  console.log(loading);
   const gifsSkeleton = () => {
+    console.log("esqueleto");
     let arr = []
     for (let i = 0; i < 10; i++) {
       arr.push(
