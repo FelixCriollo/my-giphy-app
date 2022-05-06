@@ -1,11 +1,14 @@
-import { BiSearchAlt2 } from 'react-icons/bi'
 import { useState, useCallback, memo } from 'react'
-import useGiphy from '../../hooks/useGiphy'
+import { useNavigate } from 'react-router-dom'
+import { BiSearchAlt2 } from 'react-icons/bi'
+import useGiphy from '@hooks/useGiphy'
 import './search.css'
 
 function Search() {
   const { setCurrentSearch, actulizeData, setLoading  } = useGiphy();
-  const [ search, setSearch ] = useState("")
+  const [ search, setSearch ] = useState("");
+  const navigate = useNavigate();
+
   
   const handleChange = (e) => {
     console.log(e.target.value);
@@ -19,7 +22,8 @@ function Search() {
     
     if (lower !== "") {
       setCurrentSearch(lower)
-      actulizeData(lower) 
+      actulizeData(lower)
+      navigate("/search") 
     }
   }, [search])
 

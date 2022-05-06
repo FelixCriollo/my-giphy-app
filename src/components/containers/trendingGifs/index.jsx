@@ -1,7 +1,7 @@
-import { GifContainer } from "../gif/gifList";
-import { fetchTrendingGifs } from "../../api/gifs";
 import { useState, useEffect, memo } from "react";
-import { Carousel } from "../carousel";
+import { GifContainer } from "@gif/gifList";
+import { fetchTrendingGifs } from "@api/gifs";
+import { Carousel } from "@elements/carousel";
 import './trendingGifs.css';
 
 function TrendingGifs() {

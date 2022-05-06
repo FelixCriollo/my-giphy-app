@@ -1,5 +1,5 @@
-import { GifContainer } from '../gif/gifList';
-import useGiphy from '../../hooks/useGiphy'
+import { GifContainer } from '@gif/gifList';
+import useGiphy from '@hooks/useGiphy'
 import './searchedGifs.css'
 export function SearchedGifs() {
   const { gifs, currentSearch, loading } = useGiphy()

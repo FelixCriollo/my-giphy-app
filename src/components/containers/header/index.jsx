@@ -1,5 +1,5 @@
 import { FiTwitter,FiGithub } from 'react-icons/fi'
-import logo from '../../images/logo.png'
+import logo from '../../../images/logo.png'
 import './header.css'
 
 export function Header(props) {
