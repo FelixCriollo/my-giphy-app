@@ -1,0 +1,30 @@
+.DisplayGifs {
+  padding: 2em 0 2em 0;
+  margin-block: auto;
+}
+
+.DisplayGifs .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.DisplayGifs__title {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.DisplayGifs__subtitle {
+  font-size: 1rem;
+}
+
+.DisplayGifsGrid {
+  columns: 4 180px;
+  column-gap: 1.5em;
+}
+
+.DisplayGifsGrid > li {
+  margin-bottom: 1.5em;
+}

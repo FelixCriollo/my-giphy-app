@@ -1,0 +1,61 @@
+.Detail .container {
+  margin-block: 3em;
+  display: flex;
+  gap: 4em;
+}
+.Detail__aside {
+  width: 280px;
+}
+
+.Detail__user {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  margin-bottom: 1em;
+}
+.Detail__user img {
+  width: 60px;
+  border-radius: 3px;
+  margin-right: 1em;
+}
+.Detail__pseudoName {
+  font-size: 1.1em;
+}
+.Detail__userName {
+  display: flex;
+  align-items: flex-end;
+}
+.Detail__userName > svg {
+  margin-left: 0.5em;
+}
+.Detail__description {
+  font-size: 1.1em;
+  margin-bottom: 4em;
+}
+.Detail__source {
+  display: flex;
+  align-items: baseline;
+  font-size: 1.1em;
+  color: #012;
+  font-weight: 600;
+  text-decoration: none;
+}
+.Detail__source svg {
+  display: inline-block;
+  margin-right: 0.25em;
+}
+.Detail__source span {
+  overflow: hidden;
+  
+  text-overflow: ellipsis;
+}
+.Detail__imp {
+  width: 100%;
+}
+.Detail__title {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+.Detail__img {
+  width: 70%;
+}

@@ -5,7 +5,12 @@ import useGiphy from '@hooks/useGiphy'
 import './search.css'
 
 function Search() {
-  const { setCurrentSearch, actulizeData, setLoading  } = useGiphy();
+  const { 
+    setCurrentSearch, 
+    actulizeData, 
+    setLoading
+  } = useGiphy()
+
   const [ search, setSearch ] = useState("");
   const navigate = useNavigate();
 
@@ -23,7 +28,7 @@ function Search() {
     if (lower !== "") {
       setCurrentSearch(lower)
       actulizeData(lower)
-      navigate("/search") 
+      navigate(`/search/${lower}`) 
     }
   }, [search])
 

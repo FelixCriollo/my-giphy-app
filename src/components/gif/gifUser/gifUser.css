@@ -37,7 +37,13 @@
 .GifUser__name {
   font-weight: bold;
 }
-
+.GifUser__username {
+  display: flex;
+  align-items: flex-end;
+}
+.GifUser__username > svg {
+  margin-left: 0.5em;
+}
 .noUser {
   text-align: center;
   color: #fff;

@@ -1,12 +1,21 @@
 import { FiTwitter,FiGithub } from 'react-icons/fi'
+import { useNavigate } from 'react-router-dom'
+import { memo } from 'react'
 import logo from '../../../images/logo.png'
 import './header.css'
 
-export function Header(props) {
+function Header(props) {
+  const navigate = useNavigate()
+  const toHome = () => navigate("/")
   return (
     <header className="Header">
       <div className="container">
-        <img src={logo} alt="my gifs" className='Header__logo'/>
+        <img 
+          src={logo} 
+          alt="my gifs" 
+          className='Header__logo'
+          onClick={toHome}
+        />
 
         {props.children}
 
@@ -27,3 +36,5 @@ export function Header(props) {
     </header>
   )
 }
+
+export default memo(Header)

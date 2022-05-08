@@ -1,3 +1,4 @@
+import { GoVerified } from 'react-icons/go'
 import './gifUser.css'
 
 export function GifUser({ user, visible, list }) {
@@ -16,7 +17,14 @@ export function GifUser({ user, visible, list }) {
                  ?
                   <div className="GifUser__info">
                     <h4 className="GifUser__name">{user.display_name}</h4>
-                    <h3 className="GifUser__username">@{user.username}</h3>
+                    <h3 className="GifUser__username">
+                      @{user.username}
+                      {
+                        user.is_verified
+                          ? <GoVerified />
+                          : null
+                      }
+                    </h3>
                   </div> 
                   : null
               }

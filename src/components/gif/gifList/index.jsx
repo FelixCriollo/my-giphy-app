@@ -1,17 +1,17 @@
 import { GifCard } from "../gifCard";
 import "./gifList.css"
 
-export function GifContainer({ gifs, loading, list = false }) {
-  console.log(loading);
+export function GifList({ gifs, loading, list = false }) {
+  // console.log(loading);
   const gifsSkeleton = () => {
-    console.log("esqueleto");
+    // console.log("esqueleto");
     let arr = []
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 16; i++) {
       arr.push(
         <div key={i} >
           <div 
             className={!list ? "GifSkeleton" : "GifSkeleton GifSkeleton--list"}
-            />
+          />
         </div>
       )
     }

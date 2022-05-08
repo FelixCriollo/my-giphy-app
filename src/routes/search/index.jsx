@@ -1,17 +1,18 @@
-import { SearchedGifs } from '@containers/searchedGifs'
-import { Header } from '@containers/header'
-import Search from '@elements/search'
+import useGiphy from '@hooks/useGiphy'
+import { DisplayGifs } from '@containers/displayGifs';
 import './search.css'
 
 export function SearchDone() {
+  const { gifs, currentSearch, loading } = useGiphy()
   return (
     <>
-      <Header>  
-        <Search />
-      </Header>
-
       <p style={{textAlign: "center"}}>Busqueda maistra</p>
-      <SearchedGifs />
+      
+      <section className="SearchedGifs">
+        <div className="container">
+          <DisplayGifs title={currentSearch} gifs={gifs} loading={loading }/>
+        </div>
+      </section>
     </>
   )
 }
