@@ -1,0 +1,43 @@
+.LoginWrapper {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+}
+
+.Login {
+  background: aqua;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 2em;
+  padding: 1.5em;
+}
+
+.Login__title {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.Login__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.Login__label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+}
+
+.Login__submit {
+  padding: 0.5em 1.5em;
+  align-self: center;
+  cursor: pointer;
+}

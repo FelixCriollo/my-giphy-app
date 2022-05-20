@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'
 import { Home } from '@routes/home'
+import { Login } from '@routes/login'
 import { SearchDone } from '@routes/search'
 import { Detail } from '@routes/detail'
 import { GiphyContextProvider } from '../context/GiphyContext'
@@ -19,6 +20,7 @@ function App() {
           <main>
             <Routes>
               <Route index element={<Home />}/>
+              <Route path='/login' element={<Login />}/>
               <Route path='/search/:searchName' element={<SearchDone />}/>
               <Route path='/gifs/:gifId' element={<Detail />}/>
               <Route path='*' element={<Navigate replace to="/"/>}/>

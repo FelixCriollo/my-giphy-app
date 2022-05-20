@@ -1,13 +1,23 @@
 import { useState, useEffect } from 'react'
-import useGiphy from '@hooks/useGiphy'
 import { Carousel } from "@elements/carousel";
 import { GifList } from '@gif/gifList'
 import { fetchTrendingGifs } from '@api/gifs'
-import "./home.css"
 import { DisplayGifs } from '@containers/displayGifs';
+import { useNavigate } from 'react-router-dom';
+import useGiphy from '@hooks/useGiphy'
+import "./home.css"
 
 export function Home() {
-  // trending section
+  const navigate = useNavigate()
+  useEffect(() => {
+    const login = sessionStorage.getItem("SSLOGIN_1");
+    
+    if(login === null) {
+      localStorage.setItem("LSGIFS_1", [])
+      navigate("/login")
+    }
+  }, [])
+
   const {trending, setTrending} = useGiphy()
   const [loading, setLoading] = useState(true)
 
@@ -46,7 +56,7 @@ export function Home() {
                   gifs={lastGifs.listGifs} 
                   loading={lastGifsLoading}
                 />
-              : null
+              : <p>Search gifs in the browser </p>
           }
         </div>
       </section>

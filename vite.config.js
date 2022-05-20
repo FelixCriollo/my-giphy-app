@@ -1,5 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+/// <reference types="vitest" />
+/// <reference types="vite/client" />
 
 import path from 'node:path'
 
@@ -15,5 +17,10 @@ export default defineConfig({
       '@routes': path.resolve(__dirname, './src/routes'),
     }
   },
-  plugins: [react()]
+  plugins: [react()],
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './src/test/setup.js',
+  },
 })

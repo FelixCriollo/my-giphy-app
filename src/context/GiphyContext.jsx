@@ -1,13 +1,15 @@
 import { useState, createContext } from "react"
 import { fetchGifs } from '../api/gifs'
 import { useLocalStorage } from "@hooks/useLocalStorage"
+import { useSessionStorage } from "@hooks/useSessionStorage"
 import { useEffect } from "react"
 
 export const GiphyContext = createContext()
 
 export function GiphyContextProvider({children}) {
-  // console.log("Item del local storage");
-  // console.log(parsedItem);
+  // login
+  // const { saveItem: setSession } =  useSessionStorage("LSLOGIN_1", [])
+
   const { 
     item: lastGifs,
     saveItem: setLastGifs,
